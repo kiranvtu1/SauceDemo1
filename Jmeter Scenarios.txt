@@ -1,0 +1,29 @@
+Steps:
+
+Thread Group
+
+100 users
+
+Ramp-up: 60 sec
+
+Loop count: 1
+
+Samplers:
+
+HTTP Request: POST /auth/login
+
+HTTP Request: GET /products
+
+HTTP Request: POST /carts/add
+
+HTTP Request: GET /products/search?q=laptop
+
+Add Listeners:
+
+Summary Report
+
+Aggregate Report
+
+Response Time Graph
+
+HTML Report
