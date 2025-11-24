@@ -1,0 +1,59 @@
+{
+  "info": {
+    "name": "DummyJSON API Functional Tests",
+    "_postman_id": "dummyjson-tests-001",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"username\": \"kminchelle\", \"password\": \"0lelplR\" }"
+        },
+        "url": { "raw": "https://dummyjson.com/auth/login" }
+      }
+    },
+    {
+      "name": "Get All Products",
+      "request": {
+        "method": "GET",
+        "url": "https://dummyjson.com/products"
+      }
+    },
+    {
+      "name": "Add Product to Cart",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"userId\": 1, \"products\": [ { \"id\": 1, \"quantity\": 2 }, { \"id\": 2, \"quantity\": 3 } ] }"
+        },
+        "url": "https://dummyjson.com/carts/add"
+      }
+    },
+    {
+      "name": "Negative Missing User ID",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"products\": [{ \"id\": 1, \"quantity\": 1 }] }"
+        },
+        "url": "https://dummyjson.com/carts/add"
+      }
+    },
+    {
+      "name": "Search Products",
+      "request": {
+        "method": "GET",
+        "url": "https://dummyjson.com/products/search?q=laptop"
+      }
+    }
+  ]
+}
